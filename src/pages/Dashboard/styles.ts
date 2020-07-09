@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-interface CardProps {
-  total?: boolean;
-}
-
 export const Container = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -24,10 +20,15 @@ export const CardContainer = styled.section`
 `;
 
 export const Card = styled.div`
-  background: ${({ total }: CardProps): string => (total ? '#FF872C' : '#fff')};
+  background: ${props => props.theme.colors.cardBackground};
   padding: 22px 32px;
   border-radius: 5px;
-  color: ${({ total }: CardProps): string => (total ? '#fff' : '#363F5F')};
+  color: ${props => props.theme.colors.primary};
+
+  &:last-child {
+    color: #fff;
+    background: #ff872c;
+  }
 
   header {
     display: flex;
@@ -55,7 +56,7 @@ export const TableContainer = styled.section`
     border-spacing: 0 8px;
 
     th {
-      color: #969cb3;
+      color: ${props => props.theme.colors.secondary};
       font-weight: normal;
       padding: 20px 32px;
       text-align: left;
@@ -66,13 +67,13 @@ export const TableContainer = styled.section`
     td {
       padding: 20px 32px;
       border: 0;
-      background: #fff;
+      background: ${props => props.theme.colors.cardBackground};
       font-size: 16px;
       font-weight: normal;
-      color: #969cb3;
+      color: ${props => props.theme.colors.secondary};
 
       &.title {
-        color: #363f5f;
+        color: ${props => props.theme.colors.primary};
       }
 
       &.income {

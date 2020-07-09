@@ -16,16 +16,18 @@ export const Container = styled.div<ContainerProps>`
     align-items: center;
     justify-content: space-between;
 
+    div {
+      display: flex;
+      align-items: center;
+    }
+
     nav {
       a {
         color: #fff;
         text-decoration: none;
         font-size: 16px;
         transition: opacity 0.2s;
-
-        & + a {
-          margin-left: 32px;
-        }
+        margin-right: 32px;
 
         &:hover {
           opacity: 0.6;
