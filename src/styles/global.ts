@@ -6,10 +6,12 @@ export default createGlobalStyle`
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+    transition: color 0.1s;
+    transition: background-color 0.1s;
   }
 
   body {
-    background: #F0F2F5 ;
+    background: ${props => props.theme.colors.background} ;
     -webkit-font-smoothing: antialiased
   }
 

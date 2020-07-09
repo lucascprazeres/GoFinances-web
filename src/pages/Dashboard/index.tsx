@@ -81,7 +81,7 @@ const Dashboard: React.FC = () => {
               {formatValue(Number(balance.outcome))}
             </h1>
           </Card>
-          <Card total>
+          <Card>
             <header>
               <p>Total</p>
               <img src={total} alt="Total" />

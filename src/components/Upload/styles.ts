@@ -46,6 +46,13 @@ export const UploadMessage = styled.p`
 
   color: ${({ type }: UploadProps) => messageColors[type || 'default']};
 
+  ${props =>
+    props.theme.title === 'dark'
+      ? css`
+          color: ${props.theme.colors.primary};
+        `
+      : null}
+
   justify-content: center;
   align-items: center;
 `;
