@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 interface ContainerProps {
   size?: 'small' | 'large';
 }
 
 export const Container = styled.div<ContainerProps>`
-  background: #5636d3;
+  background: ${props =>
+    props.theme.title === 'light' ? '#5636d3' : shade(0.2, '#5636d3')};
   padding: 30px 0;
 
   header {
